@@ -1,3 +1,4 @@
+'use client';
 import { featuresData } from "@/data/Feature";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,9 +13,15 @@ export default function Home() {
         <div className="font-semibold text-[28px]">SellSpot</div>
         <nav>
           <ul className="flex items-center justify-center gap-4">
-            <li><Link href="#">Home</Link></li>
-            <li><Link href="#">Feature</Link></li>
-            <li><Link href="#">Faq</Link></li>
+            <li>
+              <Link href="#">Home</Link>
+            </li>
+            <li>
+              <Link href="#">Feature</Link>
+            </li>
+            <li>
+              <Link href="#">Faq</Link>
+            </li>
           </ul>
         </nav>
         <button className="btn">
@@ -49,41 +56,56 @@ export default function Home() {
           />
         </div>
         <div className="max-w-3xl flex text-center justify-center mx-auto flex-col ">
-          <h2 className="text-[36px] mb-[20px] font-medium">Discover, Connect, Transact</h2>
+          <h2 className="text-[36px] mb-[20px] font-medium">
+            Discover, Connect, Transact
+          </h2>
           <p className="mb-[40px]">
             <span className="font-bold">SellSpot </span>
-            is more than just an app. It&apos;s a platform. its your gateway to a
-            vibran marketplace community where buyer adn selerss converge,
+            is more than just an app. It&apos;s a platform. its your gateway to
+            a vibran marketplace community where buyer adn selerss converge,
             createing a dynamic ecosystem of exchart
           </p>
-          <button className="btn mx-auto">download Now <IoDownloadOutline size={20} /></button>
+          <button className="btn mx-auto">
+            download Now <IoDownloadOutline size={20} />
+          </button>
         </div>
       </section>
 
       <section className="container mx-auto text-center my-[80px]">
         <div className="max-w-xl mx-auto">
-        <h2 className="text-[36px] font-bold mb-[26px]">Why SellSpot?</h2>
-        <p>Choose SellSpot for a seamless, enjoyable and rewarding marketplace experience unlike any other</p>
+          <h2 className="text-[36px] font-bold mb-[26px]">Why SellSpot?</h2>
+          <p>
+            Choose SellSpot for a seamless, enjoyable and rewarding marketplace
+            experience unlike any other
+          </p>
         </div>
 
-       
-          <div className="mt-[80px] grid grid-cols-3 gap-12">
-          {featuresData.map(feature => (
-          <div key={feature.id} className="text-left bg-gradient-to-b from-[#242333] to-[#010014] border border-[#3F3E4E] rounded-xl p-[25px]">
-            <div className="bg-gray w-fit p-[10px] rounded-md">
-              {feature.icon}
+        <div className="mt-[80px] grid grid-cols-3 gap-12">
+          {featuresData.map((feature) => (
+            <div
+              key={feature.id}
+              className="text-left bg-gradient-to-b from-[#242333] to-[#010014] border border-[#3F3E4E] rounded-xl p-[25px]"
+            >
+              <div className="bg-gray w-fit p-[10px] rounded-md">
+                {feature.icon}
+              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
             </div>
-            <h3>
-              {feature.title}
-            </h3>
-            <p>
-            {feature.description}
-            </p>
-          </div>
-           ))}
+          ))}
         </div>
-       
-
+      </section>
+      <section className=" container mx-auto text-center my-[80px]">
+        <div className="max-w-xl mx-auto">
+          <h2 className="text-[36px] font-bold mb-[26px]">
+            Frequently Asked Questions
+          </h2>
+          <p>
+            Do you need some help with something or do ypu have question on same
+            feature?
+          </p>
+        </div>
+        <div></div>
       </section>
     </main>
   );
