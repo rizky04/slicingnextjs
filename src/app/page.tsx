@@ -1,10 +1,17 @@
-'use client';
+"use client";
 import { featuresData } from "@/data/Feature";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import { FiCpu } from "react-icons/fi";
+import { FiChevronUp, FiCpu } from "react-icons/fi";
 import { IoDownloadOutline } from "react-icons/io5";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { CiTwitter } from "react-icons/ci";
+import { BsInstagram, BsYoutube } from "react-icons/bs";
 
 export default function Home() {
   return (
@@ -95,7 +102,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className=" container mx-auto text-center my-[80px]">
+      <section className="container mx-auto text-center my-[80px]">
         <div className="max-w-xl mx-auto">
           <h2 className="text-[36px] font-bold mb-[26px]">
             Frequently Asked Questions
@@ -105,8 +112,70 @@ export default function Home() {
             feature?
           </p>
         </div>
-        <div></div>
+        <div>
+          <div className="h-screen w-full pt-32 px-4">
+            <div className="mx-auto w-full max-w-5xl divide-y divide-white/5 rounded-xl bg-white/5">
+              <Disclosure as="div" className="p-6" defaultOpen={true}>
+                <DisclosureButton className="group flex w-full items-center justify-between">
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
+                    What is your refund policy?
+                  </span>
+                  <FiChevronUp className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
+                  If you&apos;re unhappy with your purchase, we&apos;ll refund
+                  you in full.
+                </DisclosurePanel>
+              </Disclosure>
+              <Disclosure as="div" className="p-6">
+                <DisclosureButton className="group flex w-full items-center justify-between">
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
+                    Do you offer technical support?
+                  </span>
+                  <FiChevronUp className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
+                  No.
+                </DisclosurePanel>
+              </Disclosure>
+              <Disclosure as="div" className="p-6" defaultOpen={true}>
+                <DisclosureButton className="group flex w-full items-center justify-between">
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
+                    What is your refund policy?
+                  </span>
+                  <FiChevronUp className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
+                  If you&apos;re unhappy with your purchase, we&apos;ll refund
+                  you in full.
+                </DisclosurePanel>
+              </Disclosure>
+              <Disclosure as="div" className="p-6">
+                <DisclosureButton className="group flex w-full items-center justify-between">
+                  <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
+                    Do you offer technical support?
+                  </span>
+                  <FiChevronUp className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
+                </DisclosureButton>
+                <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
+                  No.
+                </DisclosurePanel>
+              </Disclosure>
+            </div>
+          </div>
+        </div>
       </section>
+      <footer className="container mx-auto py-[80px]">
+        <hr className="mb-[22px]" />
+        <div className="flex justify-between items-center">
+          <p>@{new Date().getFullYear()} Company. All rights reserved</p>
+          <div className="flex items-center justify-items-center gap-4 text-xl">
+            <CiTwitter />
+            <BsInstagram />
+            <BsYoutube />
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
